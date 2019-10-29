@@ -22,16 +22,17 @@ namespace BowlingKata
         }
 
 
-        [Fact]
-        public void Sum_All_Turns()
+        [Theory]
+        [InlineData(new int[]{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, 20)]
+        [InlineData(new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2}, 21)]
+        [InlineData(new int[] { 3, 1, 3, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2}, 27)]
+
+        public void Sum_All_Turns(int[] turns, int expected)
         {
             //Arrange
-            const int expected = 20;
-            int[] frames = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
-
 
             //Act
-            int result = new ScoreCalculator().Calculate(frames);
+            int result = new ScoreCalculator().Calculate(turns);
 
 
             //Assert
