@@ -38,5 +38,20 @@ namespace BowlingKata
             //Assert
             Assert.Equal(expected, result);
         }
+
+        [Theory]
+        [InlineData(new int[] { 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, 30)]
+
+        public void Sum_Turns_With_a_Strike(int[] turns, int expected)
+        {
+            //Arrange
+
+            //Act
+            int result = new ScoreCalculator().Calculate(turns);
+
+
+            //Assert
+            Assert.Equal(expected, result);
+        }
     }
 }
