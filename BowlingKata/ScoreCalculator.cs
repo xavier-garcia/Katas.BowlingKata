@@ -6,9 +6,16 @@
         {
         }
 
-        public double Calculate(int[] frames)
+        public int Calculate(int[] turns)
         {
-            return 0;
+            int score = 0;
+            foreach (var turn in turns)
+            {
+                score += turn;
+            }
+
+            return score;
         }
+
     }
 }
